@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Loading from "./components/loading/loading";
+import PublicRoutes from "./pages/public/publicRoutes";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [rootElement, setRootElement] = useState(<Loading />);
+
+  function setPublicRoutes() {
+    setRootElement(<PublicRoutes route="/oi" />);
+  }
+
+  useEffect(() => {
+    setTimeout(setPublicRoutes, 3000);
+  }, []);
+  return <div className="App">{rootElement}</div>;
 }
 
 export default App;
