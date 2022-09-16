@@ -1,4 +1,5 @@
 import { useSpring, animated } from "react-spring";
+import { LoadingDiv } from "../../styles/div.styles";
 
 const loadingTattoMacchine = require("../../assets/img/tattooMacchine.png");
 
@@ -10,11 +11,10 @@ function Loading() {
   });
 
   return (
-    <div
+    <LoadingDiv
       style={{
         height: "100%",
         width: "100%",
-        filter: "opacity(60%) hue-rotate(90deg)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -27,11 +27,10 @@ function Loading() {
           height: "20%",
           borderRadius: 16,
           ...styles,
-          filter: "invert(100%)",
+          filter: "invert(70%)",
         }}
       />
-      <h2 style={{ color: "white", marginTop: "4%" }}>Loading...</h2>
-    </div>
+    </LoadingDiv>
   );
 }
 

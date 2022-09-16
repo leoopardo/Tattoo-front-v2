@@ -7,7 +7,7 @@ function App() {
   const [rootElement, setRootElement] = useState(<Loading />);
 
   function setPublicRoutes() {
-    setRootElement(<PublicRoutes route="/oi" />);
+    setRootElement(<PublicRoutes route="/"/>);
   }
 
   useEffect(() => {

@@ -1,9 +1,10 @@
 * {
-  font-family: 'Niramit', sans-serif;
+font-family: 'Cagliostro', sans-serif;
 }
 
 .App {
-  background-color: #0c0f14;
+  background-color: #0b0e13;
+  display: flex;
 }
 
 @media screen and (max-width: 360px) {
