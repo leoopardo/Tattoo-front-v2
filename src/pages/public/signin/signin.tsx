@@ -23,7 +23,7 @@ function Signin() {
       style={{
         backgroundColor: "white",
         borderRadius: "2%",
-        marginTop: "3%",
+        marginTop: "15%",
         textAlign: "center",
         width: "90%",
         display: "flex",
