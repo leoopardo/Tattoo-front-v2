@@ -19,11 +19,11 @@ export const Input = StryledMui(TextField)(({ theme }) => ({
   "& .MuiInputBase-input": {
     borderRadius: 4,
     position: "relative",
-    backgroundColor: "#C0C8D6",
+    backgroundColor: "#2c2d2e70",
     fontSize: 16,
     FontWeigth: 600,
     color: "black",
-    padding: "10px 26px 10px 12px",
+    padding: "10px 29px 10px 12px",
     transition: theme.transitions.create(["border-color", "box-shadow"]),
     "&:focus": {
       color: "white",

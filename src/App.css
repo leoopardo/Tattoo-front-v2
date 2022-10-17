@@ -1,5 +1,6 @@
 * {
-font-family: 'Cagliostro', sans-serif;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
 }
 
 .App {
@@ -10,59 +11,119 @@ font-family: 'Cagliostro', sans-serif;
 @media screen and (max-width: 360px) {
   .App {
     height: 650px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 }
 
 @media screen and (min-width: 375px) {
   .App {
     height: 667px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media screen and (min-width: 390px) {
   .App {
     height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media screen and (min-width: 414px) {
   .App {
     height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media screen and (min-width: 500px) {
   .App {
     height: 730px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media screen and (min-width: 600px) {
   .App {
     height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media screen and (min-width: 800px) {
   .App {
     height: 1200px;
+    display: flex;
+    flex-direction: row;
+    align-items: inherit;
   }
 }
 
 @media screen and (min-width: 1000px) {
   .App {
     height: 600px;
+    display: flex;
+    flex-direction: row;
+
+    align-items: inherit;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .App {
     height: 640px;
+    display: flex;
+    flex-direction: row;
+    align-items: inherit;
   }
 }
 
 @media screen and (min-width: 1250px) {
   .App {
-    height: 640px;
+    height: 617.3px;
+    display: flex;
+    flex-direction: row;
+    align-items: inherit;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  .App {
+    height: 617.3px;
+    display: flex;
+    flex-direction: row;
+    align-items: inherit;
+  }
+}
+
+@media screen and (min-width: 1450px) {
+  .App {
+    height: 800px;
+    display: flex;
+    flex-direction: row;
+
+    align-items: inherit;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .App {
+    height: 929px;
+    display: flex;
+    flex-direction: row;
+
+    align-items: inherit;
   }
 }

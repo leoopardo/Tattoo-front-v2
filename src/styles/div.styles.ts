@@ -12,9 +12,20 @@ export const LoadingDiv = styled.div`
 
 export const NavbarDiv = styled.div`
   height: 100%;
-  width: 25%;
+  width: 320px;
   background-color: #171b22;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const NavbarMobileDiv = styled.div`
+  height: 100px;
+  width: 100%;
+  background-color: #171b22;
+  left: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,6 +36,6 @@ export const LandingDiv = styled.div`
   margin-left: 3%;
   margin-top: 15%;
   text-align: center;
-  color: #C0C8D6;
-  font-family: 'UnifrakturMaguntia', cursive;
+  color: #c0c8d6;
+  font-family: "UnifrakturMaguntia", cursive;
 `;
