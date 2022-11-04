@@ -8,8 +8,18 @@ import AddIcon from "@mui/icons-material/Add";
 import EditIcon from "@mui/icons-material/Edit";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import NavigationIcon from "@mui/icons-material/Navigation";
+import { useAuth } from "../../contexts/Auth";
+import { useNavigate } from "react-router-dom";
 
 export const LoggedNavbar = () => {
+  const navigate = useNavigate();
+  const { signOut } = useAuth();
+
+  const onSignOutClick = async () => {
+    await signOut();
+    navigate("/welcome");
+  };
+
   const buttons = [
     <ColorButton key="Profile" startIcon={<AccountBoxIcon />}>
       Profile
@@ -42,7 +52,9 @@ export const LoggedNavbar = () => {
           {buttons}
         </ButtonGroup>
 
-        <Button color="error">Log out</Button>
+        <Button color="error" onClick={onSignOutClick}>
+          Sign-out
+        </Button>
       </Grid>
     </>
   );

@@ -10,6 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { useAuth } from "../../../contexts/Auth";
+import Signup from "../signup/signup";
 
 export const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: "white",
@@ -19,9 +20,9 @@ export const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
   },
 }));
 
-const Signin = () => {
+export const SigninComponent = () => {
+  const { signIn, user } = useAuth();
   const navigate = useNavigate();
-
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -30,8 +31,9 @@ const Signin = () => {
     },
     onSubmit: async (values) => {
       try {
-        // const signinData = await signIn(values);
-        // console.log(user);
+        console.log(user);
+        signIn(values);
+        navigate("/");
       } catch (error) {
         console.error(error);
       }
@@ -75,6 +77,7 @@ const Signin = () => {
               label="Email"
             />
             <TextField
+              type="password"
               name="password"
               sx={{ marginTop: "12px", width: "80%" }}
               required
@@ -107,5 +110,3 @@ const Signin = () => {
     </Box>
   );
 };
-
-export default Signin;

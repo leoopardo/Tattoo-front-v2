@@ -102,9 +102,7 @@ function Signup() {
     try {
       const formData = new FormData();
       formData.append("image", file);
-      console.log(formData);
       const url = await api.post("/upload", formData);
-      console.log(url);
       formik.setFieldValue("profilePicture", url.data.url);
     } catch (error) {
       console.log(error);
@@ -235,7 +233,7 @@ function Signup() {
                       formik.setFieldValue("country", e.target.value);
                       const selectedCountry: ICountry | undefined =
                         Countries?.find((c) => c.name === e.target.value);
-                      console.log(selectedCountry);
+  
                       setStates(
                         State.getStatesOfCountry(selectedCountry?.isoCode)
                       );
@@ -277,7 +275,7 @@ function Signup() {
                       const selectedState: any = States?.find(
                         (s) => s.name === e.target.value
                       );
-                      console.log(selectedState);
+            
                       setCities(
                         City.getCitiesOfState(
                           selectedCountry?.isoCode,

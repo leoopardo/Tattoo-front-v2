@@ -1,7 +1,15 @@
+import axios from "axios";
 import User from "../types/User";
-import React, { createContext, useState, useContext } from "react";
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useEffect,
+  FC,
+} from "react";
 import api from "../services/api";
 import { PropsWithChildren } from "react";
+
 interface LoginData {
   email: string;
   password: string;
@@ -19,8 +27,7 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [user, setUser] = useState<User | undefined | null>(undefined);
 
-  setUser(null);
-  const signIn = async (data: LoginData) => {
+  async function signIn(data: LoginData) {
     const { data: user } = await api.post(`/auth/sign-in`, data);
 
     localStorage.setItem("accessToken", user.accessToken);
@@ -32,7 +39,7 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
     }
 
     setUser(user);
-  };
+  }
 
   async function signInByStorage(): Promise<boolean> {
     try {
@@ -75,7 +82,7 @@ export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-export async function useAuth() {
+export function useAuth() {
   const context = useContext(AuthContext);
   return context;
 }

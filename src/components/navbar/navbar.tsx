@@ -1,9 +1,8 @@
 import { Button, Grid } from "@mui/material";
 import { useLocation } from "react-router-dom";
-import Signin from "../../pages/public/signin/signin";
+import { SigninComponent } from "../../pages/public/signin/signin";
 import { NavbarDiv, NavbarMobileDiv } from "../../styles/div.styles";
 import { LoggedNavbar } from "../logged-navbar/loggedNavbar";
-import { useEffect, useState } from "react";
 const logo = require("../../assets/img/TattooU.png");
 
 function Navbar() {
@@ -14,15 +13,15 @@ function Navbar() {
       {window.innerWidth > 750 && (
         <NavbarDiv>
           <img src={logo} alt="logo.png" style={{ width: "100%" }} />
-          {location.pathname === "/" && <Signin />}
+          {location.pathname === "/welcome" && <SigninComponent />}
 
-          {location.pathname === "/home" && <LoggedNavbar />}
+          {location.pathname === "/" && <LoggedNavbar />}
         </NavbarDiv>
       )}
       {window.innerWidth < 750 && (
         <NavbarMobileDiv>
           <img src={logo} alt="logo.png" style={{ width: "80%" }} />
-          {location.pathname === "/" && (
+          {location.pathname === "/welcome" && (
             <Grid
               item
               display="flex"
@@ -30,7 +29,7 @@ function Navbar() {
               justifyContent="center"
               xs={12}
             >
-              <Signin />
+              <SigninComponent />
             </Grid>
           )}
         </NavbarMobileDiv>

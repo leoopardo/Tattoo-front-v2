@@ -12,9 +12,12 @@ import api from "../../../services/api";
 import { Post } from "../../../types/posts.types";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import { IndeterminateCheckBox } from "@mui/icons-material";
+import { useAuth } from "../../../contexts/Auth";
+import { deepOrange } from "@mui/material/colors";
 
 export const Home = () => {
   const [posts, setPosts] = useState<Post[] | null>([]);
+  const { user } = useAuth();
 
   function srcset(
     image: string,
@@ -30,6 +33,7 @@ export const Home = () => {
       }&fit=crop&auto=format&dpr=2 2x`,
     };
   }
+  console.log(user);
 
   const fetchPosts = async () => {
     const apiPosts = (await api.get("/posts")).data;
@@ -42,7 +46,6 @@ export const Home = () => {
       console.log(error);
     }
   }, []);
-  console.log(posts);
   return (
     <>
       {window.innerWidth > 750 && (
@@ -59,7 +62,17 @@ export const Home = () => {
               justifyContent: "flex-end",
             }}
           >
-            <Avatar sx={{ width: 56, height: 56 }} />
+            {/* {user?.profilePicture && ( */}
+            <Avatar src={user?.profilePicture} sx={{ width: 56, height: 56 }}>
+              
+            </Avatar>
+            {/* )} */}
+            {/* {!user?.profilePicture && (
+              <Avatar sx={{ width: 56, height: 56, bgcolor: deepOrange[500] }}>
+                
+              
+              </Avatar>
+            )} */}
           </Grid>
 
           <Grid item sx={{ height: "100%", marginTop: "3%", margin: 0 }}>

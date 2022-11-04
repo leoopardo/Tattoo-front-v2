@@ -5,9 +5,10 @@ enum UserRole {
 
 interface User {
   _id: string;
+  profilePicture: string;
   email: string;
-  firstName: string;
-  lastName: string;
+  firstname: string;
+  lastname: string;
   role: UserRole;
   phoneNumber: string;
   country: string;
